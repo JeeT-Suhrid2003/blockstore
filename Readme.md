@@ -109,4 +109,4 @@ Edit
 
  Display TX logs or Tendermint height per upload
 
-![Alt Text](/home/jeet/Documents/coding/blockstore/2025-07-20_14-40.png)
+![Alt Text](./2025-07-20_14-40.png)
