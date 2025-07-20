@@ -1,0 +1,46 @@
+"""# abci_app.py
+from abci.application import BaseApplication
+from abci.server import run_app
+import hashlib
+
+class FileStoreApp(BaseApplication):
+    def __init__(self):
+        self.store = []
+
+    def deliver_tx(self, tx):
+        tx_str = tx.decode()
+        print(f"Received tx: {tx_str}")
+        self.store.append(tx_str)
+        return self.ok()
+
+    def check_tx(self, tx):
+        return self.ok()
+
+    def commit(self):
+        state_hash = hashlib.sha256("".join(self.store).encode()).digest()
+        return self.ok(data=state_hash)
+
+if __name__ == '__main__':
+    run_app(FileStoreApp())
+"""
+from abci.application import BaseApplication
+from abci.server import run_app
+
+
+class SimpleABCIApp(BaseApplication):
+    def __init__(self):
+        super().__init__()
+
+    def echo(self, req):
+        return req
+
+    def info(self, req):
+        return {
+            "data": "BlockStore",
+            "version": "0.0.1"
+        }
+
+
+if __name__ == '__main__':
+    run_app(SimpleABCIApp())
+

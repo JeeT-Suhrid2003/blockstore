@@ -1,0 +1,9 @@
+import hashlib
+
+def commit(self) -> ResponseCommit:
+    # Generate a hash from the current store dict
+    h = hashlib.sha256()
+    for filename in sorted(self.store.keys()):
+        h.update(filename.encode())
+        h.update(self.store[filename].encode())
+    return ResponseCommit(data=h.digest()[:8])  # Tendermint requires 8-byte app hash
