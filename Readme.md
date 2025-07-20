@@ -109,4 +109,4 @@ Edit
 
  Display TX logs or Tendermint height per upload
 
-![Alt Text](./2025-07-20_14-40.png)
+![Homepage Screenshot](assets/screenshot.png)
