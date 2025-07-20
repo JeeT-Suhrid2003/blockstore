@@ -40,6 +40,7 @@ Edit
 - Requests
 
 Install dependencies:
+![Homepage Screenshot](assets/screenshot.png)
 
 ```bash
 pip install flask requests
@@ -109,4 +110,3 @@ Edit
 
  Display TX logs or Tendermint height per upload
 
-![Homepage Screenshot](assets/screenshot.png)
